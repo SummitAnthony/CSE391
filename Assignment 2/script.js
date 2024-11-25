@@ -119,10 +119,23 @@ const quotes = [
 
 let currentQuoteIndex = 0;
 
-
-
 function fetchQuote(next = true) {
     currentQuoteIndex = (next ? currentQuoteIndex + 1 : currentQuoteIndex - 1 + quotes.length) % quotes.length;
     document.getElementById('quote_text').textContent = quotes[currentQuoteIndex].text;
-    document.getElementById('quote_author').textContent = quotes[currentQuoteIndex].author;
+    document.getElementById('quote_author').textContent = `- ${quotes[currentQuoteIndex].author}`;
 }
+
+// Change color, border, and font styles dynamically
+const colorButtons = document.querySelectorAll('.color-btn');
+const quotesBox = document.querySelector('.quotes-box');
+
+colorButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const color = button.dataset.color;
+        quotesBox.style.borderColor = color;
+        quotesBox.style.backgroundColor = `${color}20`; // Light background with opacity
+        quotesBox.style.color = color;
+        quotesBox.style.fontFamily = 'Georgia, serif';
+        quotesBox.style.fontSize = '22px';
+    });
+});
