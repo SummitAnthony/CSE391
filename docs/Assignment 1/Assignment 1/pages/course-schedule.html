@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Schedule - Sumit Anthony Gomes</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    /* General Body Styling */
+    body {
+      background-color: #141414; /* Netflix dark background */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      color: #e5e5e5; /* Netflix light gray text */
+    }
+
+    /* Header Styling */
+    header {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2em;
+      color: #e50914; /* Netflix red */
+      font-weight: bold;
+    }
+
+    /* Main Table Section Styling */
+    #course-schedule {
+      width: 100%;
+      max-width: 800px;
+      background-color: #222222; /* Dark gray background */
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 15px;
+      text-align: center;
+      border: 1px solid #333; /* Slightly lighter border for contrast */
+    }
+
+    /* Table Header Styling */
+    th {
+      background-color: #e50914; /* Netflix red */
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    /* Table Cell Styling */
+    td {
+      color: #e5e5e5;
+      background-color: #141414; /* Dark background matching Netflix */
+      transition: background-color 0.3s;
+    }
+
+    /* Alternating Row Colors for Better Readability */
+    tr:nth-child(even) td {
+      background-color: #222222; /* Dark gray background */
+    }
+
+    /* Hover Effect on Rows */
+    tr:hover td {
+      background-color: #333; /* Darker hover effect */
+    }
+
+    /* Footer Styling */
+    footer {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    footer a {
+      color: #e50914;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5em;
+      }
+
+      table, th, td {
+        font-size: 0.9em;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Course Schedule</h1>
+  </header>
+
+  <section id="course-schedule">
+    <table>
+      <tr>
+        <th>Time/Day</th>
+        <th>Sunday</th>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+        <th>Thursday</th>
+        <th>Friday</th>
+        <th>Saturday</th>
+      </tr>
+      <tr>
+        <td>08:00 AM - 09:20 AM</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>CSE471 - MHE - 10A-09C</td>
+        <td></td>
+        <td>CSE471 - MHE - 10A-09C</td>
+      </tr>
+      <tr>
+        <td>11:00 AM - 12:20 PM</td>
+        <td></td>
+        <td>CSE391 - ADR - 12F-31L</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>12:30 PM - 01:50 PM</td>
+        <td></td>
+        <td>CSE391 - ADR - 12F-31L</td>
+        <td></td>
+        <td>CSE391 - ADR - 12F-31L</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>02:00 PM - 03:20 PM</td>
+        <td>CSE471 - MHE - 09F-27L</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>03:30 PM - 04:50 PM</td>
+        <td>CSE471 - MHE - 09F-27L</td>
+        <td>CSE470 - MHE - 09D-18C</td>
+        <td></td>
+        <td></td>
+        <td>CSE470 - MHE - 09D-18C</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </section>
+
+  <footer>
+    <p><a href="../index.html">Back to Home</a></p>
+  </footer>
+</body>
+</html>
