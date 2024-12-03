@@ -59,18 +59,22 @@ function reverseLines() {
     var magicinput = document.getElementById("magic-input").value;
     var magicArray = magicinput.split("\n");
     var newmagicinput = "";
+    
+    // Reverse the array of lines and each line's letters
     magicArray.reverse();
     for (var i = 0; i < magicArray.length; i++) {
-        if(i == magicArray.length-1){
-            newmagicinput += magicArray[i];
-        }
-        else{
-            newmagicinput += magicArray[i]+"\n";
+        var reversedLine = magicArray[i].split("").reverse().join(""); // Reverse the letters in each line
+        if (i == magicArray.length - 1) {
+            newmagicinput += reversedLine; // Avoid adding extra newline at the end
+        } else {
+            newmagicinput += reversedLine + "\n";
         }
     }
+    
     document.getElementById("magic-input").value = newmagicinput;
-    console.log("Reversed Lines!")
+    console.log("Reversed Lines and Letters!");
 }
+
 
 function stripBlank(){
     var magicinput = document.getElementById("magic-input").value;
