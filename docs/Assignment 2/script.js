@@ -21,8 +21,14 @@ function convert() {
 
 // Calculator
 function calculate() {
-    const values = document.getElementById('calc-value').value.split(',').map(Number);
-    if (values.length === 0 || values.some(isNaN)) {
+    // Get values from input, split by commas, and filter valid numbers
+    const values = document.getElementById('calc-value').value
+        .split(',')
+        .map(item => parseFloat(item.trim())) // Convert strings to numbers
+        .filter(item => !isNaN(item));       // Keep only valid numbers
+
+    // Check if there are no valid numbers
+    if (values.length === 0) {
         document.getElementById('max').textContent = "Error";
         document.getElementById('min').textContent = "Error";
         document.getElementById('sum').textContent = "Error";
@@ -30,10 +36,19 @@ function calculate() {
         return;
     }
 
+    // Calculate max, min, sum, and average
     const max = Math.max(...values);
     const min = Math.min(...values);
     const sum = values.reduce((acc, val) => acc + val, 0);
     const average = sum / values.length;
+
+    // Display results
+    document.getElementById('max').textContent = max.toFixed(2);
+    document.getElementById('min').textContent = min.toFixed(2);
+    document.getElementById('sum').textContent = sum.toFixed(2);
+    document.getElementById('average').textContent = average.toFixed(2);
+}
+
 
     document.getElementById('max').textContent = max.toFixed(2);
     document.getElementById('min').textContent = min.toFixed(2);
