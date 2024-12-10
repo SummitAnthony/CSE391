@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utility Tools</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="/" aria-label="Home">
+                <svg height="44" width="44" viewBox="0 0 44 44">
+                    <path d="M24.5,18c-3.584,0-6.5,2.916-6.5,6.5s2.916,6.5,6.5,6.5s6.5-2.916,6.5-6.5S28.084,18,24.5,18z" fill="#0066cc"/>
+                </svg>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#converter">Converter</a></li>
+                <li><a href="#calculator">Calculator</a></li>
+                <li><a href="#magic">Magic</a></li>
+                <li><a href="#quotes">Quotes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="converter" class="section">
+            <div class="section-title">
+                <h1>Unit Converter</h1>
+            </div>
+            <div class="tool-container">
+                <div class="converter-box">
+                    <div class="input-group">
+                        <input id="converter_input" type="number" placeholder="Enter value" />
+                        <select id="converter_unit">
+                            <option value="lbtokg">LB to KG</option>
+                            <option value="kgtolb">KG to LB</option>
+                        </select>
+                        <button onclick="convert()">Convert</button>
+                    </div>
+                    <div id="converter_result"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="calculator" class="section">
+            <div class="section-title">
+                <h1>Calculator</h1>
+            </div>
+            <div class="tool-container">
+                <input id="calc-value" type="text" placeholder="Enter series of numbers separated by commas" oninput="calculate()" />
+                <div class="results-grid">
+                    <div class="result-item">
+                        <div class="result-label">Maximum</div>
+                        <div id="max" class="result-value">0</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-label">Minimum</div>
+                        <div id="min" class="result-value">0</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-label">Sum</div>
+                        <div id="sum" class="result-value">0</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-label">Average</div>
+                        <div id="average" class="result-value">0</div>
+                    </div>
+                    <!-- New Reverse Section -->
+                    <div class="result-item">
+                        <div class="result-label">Reversed</div>
+                        <div id="reverse" class="result-value">0</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="magic" class="section">
+            <div class="section-title">
+                <h1>Magic Text Tools</h1>
+            </div>
+            <div class="tool-container">
+                <textarea id="magic-input" class="magic-textarea" placeholder="Enter your text here..."></textarea>
+                <div class="magic-buttons">
+                    <button onclick="capitalizeText()">Capitalize</button>
+                    <button onclick="cleartext()">ClearIt</button>
+                    <button onclick="sortLines()">Sort</button>
+                    <button onclick="reverseLines()">Reverse</button>
+                    <button onclick="stripBlank()">Strip Blank</button>
+                    <button onclick="addLineNo()">Add Numbers</button>
+                    <button onclick="shuffleLines()">Shuffle</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="quotes" class="section">
+            <div class="section-title">
+                <h1>Daily Quotes</h1>
+            </div>
+            <div class="quotes-box">
+                <div class="quote-text" id="quote_text">
+                    "The only way to do great work is to love what you do."
+                </div>
+                <div class="quote-author" id="quote_author">
+                    - Steve Jobs
+                </div>
+                <div class="quote-controls">
+                    <button onclick="fetchQuote(false)">← Previous</button>
+                    <button onclick="fetchQuote(true)">Next →</button>
+                </div>
+                <div class="color-controls">
+                    <button class="color-btn" data-color="#f28b82">Red</button>
+                    <button class="color-btn" data-color="#fbbc04">Orange</button>
+                    <button class="color-btn" data-color="#34a853">Green</button>
+                    <button class="color-btn" data-color="#4285f4">Blue</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        © 2024 Utility Tools. All rights reserved.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
